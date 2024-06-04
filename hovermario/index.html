@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+    <title>Mario</title>
+</head>
+
+<body>
+
+
+    <div class="page-container"> <!-- Nuevo contenedor de página -->
+        <video src="./res/fondo.mp4" autoplay="true" muted="true" loop="true" poster=""></video>
+        <!-- Navbar -->
+        <div class="navbar">
+            
+                <a class="scrollToTop">
+                    <div class="brand">
+                        <img src="./res/marioDev.png">
+                    </div>
+                </a>
+
+            
+                <a id="openModalBtn">
+                    <div class="brand">
+                        <span>Sobre mí</span>
+                    </div>
+                </a>
+            
+        </div>
+        <!-- Modal -->
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>¡Hola! Soy Mario, programador Junior.</p>
+                <p>Apasionado de la informática y la tecnología.👨‍💻 Mi viaje profesional comenzó en el mundo de la
+                    salud, donde adquirí habilidades analíticas como Técnico de Laboratorio Clínico y Biomédico. Tras un
+                    tiempo trabajando como autónomo, decidí hacer la transición al desarrollo de software porque
+                    realmente era mi pasión.</p>
+                <p>🎓 Actualmente cursando Desarrollo de Aplicaciones Multiplataforma, he adquirido habilidades en
+                    lenguajes como Java, Kotlin, Python y TypeScript, así como experiencia en el diseño y desarrollo de
+                    aplicaciones usando frameworks como Angular.</p>
+                <p>🌐 En búsqueda activa de oportunidades para aplicar y potenciar mis habilidades como programador.
+                    Siempre receptivo a aprender, colaborar y enfrentar nuevos desafíos.</p>
+                <p>🔗 Me encantaría conectar con profesionales del sector, mentores y empresas innovadoras que valoren
+                    la diversidad de experiencias.</p>
+            </div>
+        </div>
+        <!-- Fin del Modal -->
+
+        <!-- Contenido -->
+        <div id="myDiv" class="container" >
+            <!-- Marco Presentacion -->
+            <div class="profile">
+                <div class="profile-image"> <img src="./res/mario2.jpg">
+                </div>
+                <div class="profile-info">
+                    <h2>Mario Pérez Quintero</h2>
+                    <p>Junior Software Developer</p>
+                    <div class="icon-container">
+                        <!-- Aquí van los iconos -->
+                        <a href="https://github.com/Mariopq10"><span class="icon"> <img src="./res/git.png"></span></a>
+
+                        <a href="https://www.linkedin.com/in/mario-p%C3%A9rez-quintero-986405238/"><span class="icon"> <img src="./res/linkedin.png"></span></a>
+
+                    </div>
+
+                </div>
+                <!-- Fin Marco Presentacion -->
+            </div>
+
+            <!-- Competencias -->
+            <div class="competencias">
+                <article>
+                    <img src="https://i.3djuegos.com/juegos/16611/monster_hunter_world_iceborne/fotos/ficha/monster_hunter_world_iceborne-5047500.jpg">
+                    <img src="https://static.wikia.nocookie.net/monsterhunter/images/7/7d/MHWI-The_Admiral_Render_001.png/revision/latest?cb=20190821020559">
+                </article>
+                <article>
+                    <img src="https://static.gabestore.ru/product/lCdkgxB7ZW8CJrqAGVx22d9IMOKDX0t6.jpg">
+                    <img src="https://www.team17.com/wp-content/uploads/2021/11/King.png">
+                </article>
+                <article>
+                    <img src="https://i.3djuegos.com/juegos/17543/final_fantasy_xvi/fotos/ficha/final_fantasy_xvi-5799719.jpg">
+                    <img src="https://fyre.cdn.sewest.net/ff-xvi/637f3efcddc25c318cf092cf/characters-3x-Aiz702RzH.png?quality=85&width=1440">
+                </article>
+                <!-- Fin competencias -->
+                </div>
+
+
+            <!-- Fin container -->
+        </div>
+        <!-- Fin page-container -->
+    </div>
+
+    <script src="file.js"></script>
+</body>
+
+</html>
