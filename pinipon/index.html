@@ -6,16 +6,23 @@
     <title>Contador Regresivo</title>
     <style>
         body {
+            margin: 0;
+            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            background: url('pini.png') no-repeat center center fixed;
+            background-size: cover;
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
         }
         #contador {
             text-align: center;
             font-size: 2rem;
+            background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
         }
     </style>
 </head>
@@ -38,10 +45,7 @@
 
                 if (diferencia > 0) {
                     contadorElemento.innerHTML = `
-                        <div>${dias} días</div>
-                        <div>${horas} horas</div>
-                        <div>${minutos} minutos</div>
-                        <div>${segundos} segundos</div>
+                        <div>${dias}d ${horas}h ${minutos}m ${segundos}s</div>
                     `;
                 } else {
                     clearInterval(intervalo);
