@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pini Count</title>
+    <title>Contador Regresivo con Modal y Audio</title>
     <style>
         body {
             margin: 0;
@@ -74,9 +74,12 @@
     <div id="miModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <p>El tiempo corre pinillo, espabila Sinluz.</p>
+            <p>El tiempo corre pinillo, espabila SinLuz.</p>
         </div>
     </div>
+
+    <!-- Audio -->
+    <audio id="pinisong" src="pinisong.mpeg" preload="auto"></audio>
 
     <script>
         function iniciarContador() {
@@ -103,16 +106,31 @@
             const intervalo = setInterval(actualizarContador, 1000);
         }
 
-        // Función para mostrar el modal
+        // Función para mostrar el modal y reproducir el audio
         function mostrarModal() {
             const modal = document.getElementById('miModal');
             modal.style.display = 'flex';
+            reproducirAudio();
         }
 
         // Función para cerrar el modal
         function cerrarModal() {
             const modal = document.getElementById('miModal');
             modal.style.display = 'none';
+            pararAudio();
+        }
+
+        // Función para reproducir el audio
+        function reproducirAudio() {
+            const audio = document.getElementById('pinisong');
+            audio.play();
+        }
+
+        // Función para parar el audio
+        function pararAudio() {
+            const audio = document.getElementById('pinisong');
+            audio.pause();
+            audio.currentTime = 0; // Reiniciar el audio al principio
         }
 
         // Event listener para mostrar el modal al hacer clic en el contador
