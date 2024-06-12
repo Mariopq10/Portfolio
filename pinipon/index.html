@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contador Regresivo</title>
+    <title>Contador Regresivo con Modal</title>
     <style>
         body {
             margin: 0;
@@ -15,19 +15,68 @@
             background: url('pini.png') no-repeat center center fixed;
             background-size: cover;
             font-family: Arial, sans-serif;
+            overflow: hidden; /* Para evitar el desplazamiento en móviles */
         }
         #contador {
             text-align: center;
-            font-size: 2rem;
-            background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+            font-size: 1.5rem;
+            background: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
             color: white;
-            padding: 20px;
+            padding: 10px;
             border-radius: 10px;
+            cursor: pointer;
+            width: 90%; /* Ajuste de ancho para móviles */
+            max-width: 400px;
+        }
+        /* Estilo del modal */
+        .modal {
+            display: none; /* Oculto por defecto */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8); /* Fondo semitransparente */
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 300px; /* Ajuste de ancho para móviles */
+            text-align: center;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 24px; /* Tamaño reducido para móviles */
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
     <div id="contador"></div>
+
+    <!-- Modal -->
+    <div id="miModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>El tiempo corre pinillo, espabila Sinluz.</p>
+        </div>
+    </div>
 
     <script>
         function iniciarContador() {
@@ -44,9 +93,7 @@
                 const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
 
                 if (diferencia > 0) {
-                    contadorElemento.innerHTML = `
-                        <div>${dias}d ${horas}h ${minutos}m ${segundos}s</div>
-                    `;
+                    contadorElemento.innerHTML = `${dias}d ${horas}h ${minutos}m ${segundos}s`;
                 } else {
                     clearInterval(intervalo);
                     contadorElemento.innerHTML = "¡Ha llegado el día!";
@@ -55,6 +102,32 @@
 
             const intervalo = setInterval(actualizarContador, 1000);
         }
+
+        // Función para mostrar el modal
+        function mostrarModal() {
+            const modal = document.getElementById('miModal');
+            modal.style.display = 'flex';
+        }
+
+        // Función para cerrar el modal
+        function cerrarModal() {
+            const modal = document.getElementById('miModal');
+            modal.style.display = 'none';
+        }
+
+        // Event listener para mostrar el modal al hacer clic en el contador
+        document.getElementById('contador').addEventListener('click', mostrarModal);
+
+        // Event listener para cerrar el modal al hacer clic en el botón de cierre
+        document.querySelector('.close').addEventListener('click', cerrarModal);
+
+        // Event listener para cerrar el modal al hacer clic fuera de la caja del modal
+        window.addEventListener('click', function(event) {
+            const modal = document.getElementById('miModal');
+            if (event.target == modal) {
+                cerrarModal();
+            }
+        });
 
         iniciarContador();
     </script>
