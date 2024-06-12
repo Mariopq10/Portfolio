@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador Regresivo</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        #contador {
+            text-align: center;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="contador"></div>
+
+    <script>
+        function iniciarContador() {
+            const fechaObjetivo = new Date('2024-06-21T00:00:00').getTime();
+            const contadorElemento = document.getElementById('contador');
+
+            function actualizarContador() {
+                const ahora = new Date().getTime();
+                const diferencia = fechaObjetivo - ahora;
+
+                const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+                const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+                const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+                if (diferencia > 0) {
+                    contadorElemento.innerHTML = `
+                        <div>${dias} días</div>
+                        <div>${horas} horas</div>
+                        <div>${minutos} minutos</div>
+                        <div>${segundos} segundos</div>
+                    `;
+                } else {
+                    clearInterval(intervalo);
+                    contadorElemento.innerHTML = "¡Ha llegado el día!";
+                }
+            }
+
+            const intervalo = setInterval(actualizarContador, 1000);
+        }
+
+        iniciarContador();
+    </script>
+</body>
+</html>
