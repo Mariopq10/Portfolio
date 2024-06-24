@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap');
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+.page-container {
+  position: relative;
+  min-height: 100%;
+  min-width: 367px;
+}
+
+
+.container{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  max-width: 600px; /* Ancho máximo de 600px */
+  background-color: rgb(0, 0, 0);
+  border-radius: 25px;
+  margin: 0 auto; 
+  padding: 0 20px;
+  margin-top: 20px;
+
+}
+video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 105%;
+  min-height: 100%;
+  transform: translateX(calc((100% - 100vw) / 2));
+  z-index: -1;
+}
+
+.navbar {
+  background-color: #3c3c3c;
+  color: white;
+  height: 68px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.navbar .brand span {
+  cursor: pointer;
+ 
+}
+
+
+/* Button navbar */
+.brand {
+  font-size: 1.3rem;
+  transition: transform 0.5s ease;
+  margin-right: 14px;
+  margin-left: 14px;
+}
+.brand:hover{
+  transform: scale(1.2);
+}
+.brand img{
+  max-height: 50px;
+  cursor: pointer;
+}
+
+.profile {
+  display: flex;
+  margin-top: 50px;
+}
+
+.profile-image {
+  width: 130px;
+  height: 130px;
+  margin-right: 40px;
+  border: 6px solid #3c4baf; /* Marco de la imagen */
+  border-radius: 50%;
+  overflow: hidden; /* Oculta el exceso de imagen que se salga del marco */
+  transition: transform 0.5s ease;
+}
+
+.profile-image img {
+  width: 100%; 
+  height: auto;
+  display: block;
+}
+.profile-image:hover{
+  transform: scale(1.2);
+}
+
+.profile-info {
+  display: block;
+  color: white;
+}
+
+.profile-content {
+  display: flex;
+  flex-wrap: wrap;
+  color: white;
+
+}
+
+.icon-container {
+  margin-top: 10px;
+  display: flex;
+  flex: auto;
+  justify-content: space-around;
+}
+
+.icon img{
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  
+}
+
+
+.modal {
+  display: none;
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: auto; 
+  justify-content: center;
+  align-items: center;
+  opacity: 0; 
+  transition: opacity 0.8s ease; 
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 3px solid #888;
+  border-radius: 25px;
+  max-width: 650px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal.active {
+  display: flex; 
+  opacity: 1;
+}
+
+
+
+/* Inicio css Contenido */
+.competencias {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Establece la altura al 100% de la ventana */
+}
+
+
+/* Fin CSS contenido */
