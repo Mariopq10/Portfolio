@@ -1,44 +1,55 @@
-
-// JavaScript para hacer scroll suave al principio de la página al hacer clic en el enlace
 document.addEventListener('DOMContentLoaded', function () {
-    var scrollToTop = document.querySelector('.scrollToTop');
-    scrollToTop.addEventListener('click', function (e) {
-        e.preventDefault();
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
+    const languageToggle = document.getElementById('language-toggle');
+    const toggleCircle = document.querySelector('.toggle-circle');
+    let currentLanguage = 'es';
+
+    languageToggle.addEventListener('click', () => {
+        currentLanguage = currentLanguage === 'es' ? 'en' : 'es';
+        switchLanguage(currentLanguage);
+        toggleFlag();
     });
-});
 
-
-// Obtener referencia al botón y al modal
-var modal = document.getElementById("myModal");
-var btn = document.getElementById("openModalBtn");
-var span = document.getElementsByClassName("close")[0];
-
-// Función para abrir el modal
-btn.onclick = function() {
-    modal.style.display = "flex";
-    setTimeout(function(){
-        modal.classList.add("active"); // Agregar clase para activar el modal
-    }, 50); // Aseguramos un pequeño retraso para que la animación se inicie correctamente
-}
-
-// Función para cerrar el modal
-span.onclick = function() {
-    modal.classList.remove("active"); // Quitar clase para desactivar el modal
-    setTimeout(function(){
-        modal.style.display = "none";
-    }, 300); // Esperamos hasta que la animación termine antes de ocultar completamente el modal
-}
-
-// Cerrar el modal si se hace clic fuera del contenido
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.classList.remove("active"); // Quitar clase para desactivar el modal
-        setTimeout(function(){
-            modal.style.display = "none";
-        }, 300); // Esperamos hasta que la animación termine antes de ocultar completamente el modal
+    function switchLanguage(language) {
+        const elements = document.querySelectorAll('[data-en][data-es]');
+        elements.forEach(element => {
+            element.textContent = element.getAttribute(`data-${language}`);
+        });
     }
-}
+
+    function toggleFlag() {
+        if (currentLanguage === 'es') {
+            toggleCircle.classList.remove('flag-uk');
+            toggleCircle.classList.add('flag-es');
+            toggleCircle.style.left = '1px';
+        } else {
+            toggleCircle.classList.remove('flag-es');
+            toggleCircle.classList.add('flag-uk');
+            toggleCircle.style.left = '31px';
+        }
+    }
+
+    // Inicializa con el idioma y la bandera por defecto
+    switchLanguage(currentLanguage);
+    toggleFlag();
+
+   
+    // Ocultar el header inicialmente
+    const header = document.getElementById('header');
+    const aboutSection = document.getElementById('about');
+    let isNavSticky = false;
+
+    function toggleNavSticky() {
+        if (window.scrollY >= aboutSection.offsetTop && !isNavSticky) {
+            header.style.display = 'flex'; // Mostrar el header
+            header.classList.add('sticky'); // Agregar la clase sticky
+            isNavSticky = true;
+        } else if (window.scrollY < aboutSection.offsetTop && isNavSticky) {
+            header.classList.remove('sticky'); // Quitar la clase sticky
+            isNavSticky = false;
+            header.style.display = 'none'; // Ocultar el header al volver al inicio
+        }
+    }
+
+    // Mostrar el nav cuando se llegue al section "about"
+    window.addEventListener('scroll', toggleNavSticky);
+});

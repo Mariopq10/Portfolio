@@ -4,83 +4,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="estilos.css">
-    <title>Mario Pérez Quintero</title>
+    <title>Mi Portafolio</title>
+    <link rel="stylesheet" href="estilos.css">
 </head>
 
 <body>
-
-
-    <div class="page-container"> <!-- Nuevo contenedor de página -->
-        <video src="./res/fondo.mp4" autoplay="true" muted="true" loop="true" poster=""></video>
-        <!-- Navbar -->
-        <div class="navbar">
-            
-                <a class="scrollToTop">
-                    <div class="brand">
-                        <img src="./res/marioDev.png">
-                    </div>
-                </a>
-            
-                <a id="openModalBtn">
-                    <div class="brand">
-                        <span>Sobre mí</span>
-                    </div>
-                </a>
-            
-        </div>
-        <!-- Modal -->
-        <div id="myModal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <p>¡Hola! Soy Mario, programador Junior.</p>
-                <p>Apasionado de la informática y la tecnología.👨‍💻 Mi viaje profesional comenzó en el mundo de la
-                    salud, donde adquirí habilidades analíticas como Técnico de Laboratorio Clínico y Biomédico. Tras un
-                    tiempo trabajando como autónomo, decidí hacer la transición al desarrollo de software porque
-                    realmente era mi pasión.</p>
-                <p>🎓 Actualmente cursando Desarrollo de Aplicaciones Multiplataforma, he adquirido habilidades en
-                    lenguajes como Java, Kotlin, Python y TypeScript, así como experiencia en el diseño y desarrollo de
-                    aplicaciones usando frameworks como Angular.</p>
-                <p>🌐 En búsqueda activa de oportunidades para aplicar y potenciar mis habilidades como programador.
-                    Siempre receptivo a aprender, colaborar y enfrentar nuevos desafíos.</p>
-                <p>🔗 Me encantaría conectar con profesionales del sector, mentores y empresas innovadoras que valoren
-                    la diversidad de experiencias.</p>
+    <header id="header" style="display: none;">
+        <div class="containerH">
+            <!-- <div class="logo">
+                <a href="#home" data-en="Mario" data-es="Mario"></a>
+            </div> -->
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home" data-en="Home" data-es="Inicio">Inicio</a></li>
+                    <li><a href="#about" data-en="About Me" data-es="Sobre Mí">Sobre Mí</a></li>
+                    <li><a href="#projects" data-en="Projects" data-es="Proyectos">Proyectos</a></li>
+                    <li><a href="#contact" data-en="Contact" data-es="Contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            <div id="language-toggle" class="toggle">
+                <div class="toggle-circle"></div>
             </div>
         </div>
-        <!-- Fin del Modal -->
+    </header>
 
-        <!-- Contenido -->
-        <div id="myDiv" class="container" >
-            <!-- Marco Presentacion -->
-            <div class="profile">
-                <div class="profile-image"> <img src="./res/mario2.jpg">
-                </div>
-                <div class="profile-info">
-                    <h2>Mario Pérez Quintero</h2>
-                    <p>Junior Software Developer</p>
-                    <div class="icon-container">
-                        <!-- Aquí van los iconos -->
-                        <a href="https://github.com/Mariopq10"><span class="icon"> <img src="./res/git.png"></span></a>
-
-                        <a href="https://www.linkedin.com/in/mario-p%C3%A9rez-quintero-986405238/"><span class="icon"> <img src="./res/linkedin.png"></span></a>
-
-                    </div>
-
-                </div>
-                <!-- Fin Marco Presentacion -->
-            </div>
-
-            <!-- Competencias -->
-            <div class="competencias">
-             
-                <!-- Fin competencias -->
-                </div>
-
-
-            <!-- Fin container -->
+    <section id="home">
+        <div class="background"></div>
+        <div class="content container">
+            <h1 data-en="Hello, I'm Mario Pérez Quintero" data-es="Hola, soy Mario Pérez Quintero" style="color: rgba(255, 255, 255, 0.695);">Bienvenido a Mi
+                Portafolio</h1>
+            <h3 data-en="Junior Software developer" data-es="Junior Software Developer" style="color: rgba(255, 255, 255, 0.695);"></h2>
+            <a href="#about">
+            <button style="--clr:#FF44CC"><span data-en="View my work" data-es="Mira mi trabajo">View</span><i></i></button>
+        </a>
         </div>
-        <!-- Fin page-container -->
-    </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2 data-en="About Me" data-es="Sobre Mí">Sobre Mí</h2>
+            <p data-en="Hello, I am Mario, a web developer with a passion for creating exceptional user experiences."
+                data-es="Hola, soy Mario, un desarrollador web con pasión por crear experiencias de usuario excepcionales.">
+            </p>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2 data-en="Projects" data-es="Proyectos">Proyectos</h2>
+            <div class="project">
+                <h3>Farmamálaga</h3>
+                <p data-en="Ionic Project" data-es="Proyecto de Ionic"></p>
+            </div>
+            <div class="project">
+                <h3 data-en="FilmApp" data-es="FilmApp"></h3>
+                <p data-en="Angular Project based in IMDB" data-es="Proyecto Angular basado en IMDB">Descripción
+                    breve del proyecto 2.</p>
+            </div>
+            <!-- Añade más proyectos según sea necesario -->
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 data-en="Contact" data-es="Contacto">Contacto</h2>
+            <p data-en="For more information, you can contact me at mario.pq10@gmail.com."
+                data-es="Para más información, puedes contactarme a través de mario.pq10@gmail.com."></p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p data-en="&copy; 2024 Mario Pérez Quintero. All rights reserved."
+                data-es="&copy; 2024 Mario Pérez Quintero. Todos los derechos reservados.">&copy; 2024 Mario Pérez
+                Quintero. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 
     <script src="file.js"></script>
 </body>

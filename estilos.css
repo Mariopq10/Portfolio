@@ -1,179 +1,301 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap');
-
-body, html {
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  height: 100%;
-  font-family: 'Fira Sans', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  overflow-x: hidden;
 }
 
-.page-container {
-  position: relative;
-  min-height: 100%;
-  min-width: 367px;
+/* Header Styles */
+#header {
+    display: none; /* Inicialmente oculto */
 }
 
-
-.container{
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  max-width: 600px; /* Ancho máximo de 600px */
-  background-color: rgb(0, 0, 0);
-  border-radius: 25px;
-  margin: 0 auto; 
-  padding: 0 20px;
-  margin-top: 20px;
-
-}
-video {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 105%;
-  min-height: 100%;
-  transform: translateX(calc((100% - 100vw) / 2));
-  z-index: -1;
+/* Estilo sticky del header */
+#header.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000000; /* Fondo blanco */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; /* Espaciado interior */
+    transition: background-color 0.5s ease, box-shadow 0.3s ease; /* Transiciones suaves */
 }
 
-.navbar {
-  background-color: #3c3c3c;
-  color: white;
-  height: 68px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  position: relative;
+.container {
+  width: 80%;
   justify-content: space-between;
+  align-items: center;
+}
+
+.containerH {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo a {
+  color: white;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+/* Navigation Styles */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Diseño sticky navbar */
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin-right: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #ffffff9f; /* Color de texto */
+  transition: color 0.3s ease; /* Transición de color suave */
+}
+
+.nav-links a:hover {
+  color: #FF44CC; /* Color al pasar el ratón */
+}
+/* Fin sticky navbar */
+
+#language-toggle {
+  width: 60px;
+  height: 30px;
+  background-color: #ddd;
+  border-radius: 30px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-left: auto;
+}
+
+.toggle-circle {
+  width: 28px;
+  height: 28px;
+  background-size: cover;
+  border-radius: 50%;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  transition: left 0.3s, background-image 0.3s;
+}
+
+.flag-es {
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg');
+}
+
+.flag-uk {
+  background-image: url('https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg');
+}
+
+/* Section Styles */
+section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+section:nth-child(even) {
+  background-color: #fff;
+}
+
+section:nth-child(odd) {
+  background-color: #f4f4f4;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  position: relative;
+  width: 100%;
+}
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+
+/*Home*/
+#home {
+  position: relative;
+  overflow: hidden;
+}
+
+#home .background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('res/smoke.jpg') center center / cover no-repeat;
+  animation: moveBackground 20s linear infinite;
+}
+
+#home .content {
+  position: relative;
   z-index: 1;
 }
 
-.navbar .brand span {
-  cursor: pointer;
- 
-}
+/*Fin Home*/
 
-
-/* Button navbar */
-.brand {
-  font-size: 1.3rem;
-  transition: transform 0.5s ease;
-  margin-right: 14px;
-  margin-left: 14px;
-}
-.brand:hover{
-  transform: scale(1.2);
-}
-.brand img{
-  max-height: 50px;
-  cursor: pointer;
-}
-
-.profile {
-  display: flex;
-  margin-top: 50px;
-}
-
-.profile-image {
-  width: 130px;
-  height: 130px;
-  margin-right: 40px;
-  border: 6px solid #3c4baf; /* Marco de la imagen */
-  border-radius: 50%;
-  overflow: hidden; /* Oculta el exceso de imagen que se salga del marco */
-  transition: transform 0.5s ease;
-}
-
-.profile-image img {
-  width: 100%; 
-  height: auto;
-  display: block;
-}
-.profile-image:hover{
-  transform: scale(1.2);
-}
-
-.profile-info {
-  display: block;
-  color: white;
-}
-
-.profile-content {
-  display: flex;
-  flex-wrap: wrap;
-  color: white;
-
-}
-
-.icon-container {
-  margin-top: 10px;
-  display: flex;
-  flex: auto;
-  justify-content: space-around;
-}
-
-.icon img{
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  overflow: hidden;
-  cursor: pointer;
-  
-}
-
-
-.modal {
-  display: none;
-  position: fixed; 
-  z-index: 1; 
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  overflow: auto; 
-  justify-content: center;
-  align-items: center;
-  opacity: 0; 
-  transition: opacity 0.8s ease; 
-}
-
-.modal-content {
-  background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
-  border: 3px solid #888;
-  border-radius: 25px;
-  max-width: 650px;
-}
-
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
+/* Neon button */
+button {
+  position: relative;
+  background: #44444400;
+  color: #ffffff91;
   text-decoration: none;
-  cursor: pointer;
-}
-.modal.active {
-  display: flex; 
-  opacity: 1;
-}
-
-
-
-/* Inicio css Contenido */
-.competencias {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column; /* Establece la altura al 100% de la ventana */
+  text-transform: uppercase;
+  border: none;
+  letter-spacing: 0.1rem;
+  font-size: 1rem;
+  padding: 1rem 3rem;
+  transition: 0.7s;
 }
 
+button:hover {
+  letter-spacing: 0.2rem;
+  padding: 1.1rem 3.1rem;
+  background: var(--clr);
+  color: var(--clr);
+  /* box-shadow: 0 0 35px var(--clr); */
+  animation: box 3s infinite;
+}
 
-/* Fin CSS contenido */
+button::before {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background: #272822;
+}
+
+button span {
+  position: relative;
+  z-index: 1;
+}
+button i {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+button i::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  left: 80%;
+  top: -2px;
+  border: 2px solid var(--clr);
+  background: #272822;
+  transition: 0.7s;
+}
+
+button:hover i::before {
+  width: 15px;
+  left: 20%;
+  animation: move 3s infinite;
+}
+
+button i::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  left: 20%;
+  bottom: -2px;
+  border: 2px solid var(--clr);
+  background: #27282200;
+  transition: 0.7s;
+}
+
+button:hover i::after {
+  width: 15px;
+  left: 80%;
+  animation: move 3s infinite;
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes box {
+  0% {
+    box-shadow: #27272c;
+  }
+  50% {
+    box-shadow: 0 0 25px var(--clr);
+  }
+  100% {
+    box-shadow: #27272c;
+  }
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  nav ul {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+  }
+
+  nav ul li {
+      margin: 10px 0;
+  }
+
+  #language-toggle {
+      margin-top: 10px;
+  }
+}
