@@ -369,18 +369,42 @@ h2.visible {
   list-style: none;
   padding: 0;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   flex-wrap: wrap;
 }
 
 .tech-list li {
-  margin: 0.5rem;
+  margin: 1em;
+  display: flex;
+  justify-content: end;
 }
 
 .tech-list img {
-  width: 50px;
+  max-width: max-content;
   height: 50px;
 }
+
+progress {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 50%;
+  height: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+  margin-left: 2em;
+}
+
+progress::-webkit-progress-bar {
+  background-color: #e0e0e0;
+}
+
+progress::-webkit-progress-value {
+  background-color: #a34caf;
+  border-radius: 10px;
+}
+
 
 
 
@@ -406,14 +430,10 @@ header{
   .nav-links {
     flex-direction: row; /* Distribución vertical de los enlaces */
     text-align: center; /* Centrar texto */
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
   }
 
   .nav-links li {
     margin: 10px 5px; /* Espaciado entre los elementos de la lista */
-    justify-content: space-around;
   }
   .nav-links li a {
     font-size: 0.9em;
@@ -421,6 +441,27 @@ header{
 
   .toggle {
     margin-top: 10px; /* Espaciado superior del toggle */
+  }
+
+  .tech-list img {
+    max-width: 1.8em;
+    height: 1.8em;
+  }
+
+  .tech-list li {
+    margin: 0.2em;
+    display: flex;
+    justify-content: end;
+  }
+  progress {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 8em;
+    height: 0.7em;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 0.2em;
+    margin-left: 1em;
   }
 
 }

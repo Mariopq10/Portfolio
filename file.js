@@ -52,6 +52,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Mostrar el nav cuando se llegue al section "about"
     window.addEventListener('scroll', toggleNavSticky);
+    
+    //Animacion progress bar
+    let animated = false;
+    function animateProgressBars() {
+        const progressBars = document.querySelectorAll('progress');
+        progressBars.forEach(progress => {
+            const targetValue = progress.getAttribute('data-target');
+            let currentValue = 0;
+            const increment = targetValue / 100; // Ajusta el incremento para una animación más suave
+
+            const interval = setInterval(() => {
+                if (currentValue >= targetValue) {
+                    clearInterval(interval);
+                } else {
+                    currentValue += increment;
+                    progress.value = currentValue;
+                }
+            }, 20); // Ajusta el tiempo según la velocidad que desees
+        });
+    }
+
 
     window.addEventListener('scroll', function() {
         const aboutSection = document.getElementById('about');
@@ -59,9 +80,11 @@ document.addEventListener('DOMContentLoaded', function () {
         const sectionPosition = aboutSection.getBoundingClientRect().top;
         const screenPosition = window.innerHeight / 1.3;
 
-        if (sectionPosition < screenPosition) {
+        if (sectionPosition < screenPosition && !animated) {
             aboutSection.classList.add('visible');
             sectionTitle.classList.add('visible');
+            animateProgressBars();
+            animated = true
         }
     });
 
