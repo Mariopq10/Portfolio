@@ -31,21 +31,39 @@
     <section id="home">
         <div class="background"></div>
         <div class="content container">
-            <h1 data-en="Hello, I'm Mario Pérez Quintero" data-es="Hola, soy Mario Pérez Quintero" style="color: rgba(255, 255, 255, 0.695);">Bienvenido a Mi
+            <h1 data-en="Hello, I'm Mario Pérez Quintero" data-es="Hola, soy Mario Pérez Quintero"
+                style="color: rgba(255, 255, 255, 0.695);">Bienvenido a Mi
                 Portafolio</h1>
-            <h3 data-en="Junior Software developer" data-es="Junior Software Developer" style="color: rgba(255, 255, 255, 0.695);"></h2>
-            <a href="#about">
-            <button style="--clr:#FF44CC"><span data-en="View my work" data-es="Mira mi trabajo">View</span><i></i></button>
-        </a>
+            <h3 data-en="Junior Software developer" data-es="Junior Software Developer"
+                style="color: rgba(255, 255, 255, 0.695);">
+                </h2>
+                <a href="#about">
+                    <button class="custom-button" style="--clr:#FF44CC"><span data-en="View my work"
+                            data-es="Mira mi trabajo">View</span><i></i></button>
+                </a>
         </div>
     </section>
 
     <section id="about">
-        <div class="container">
-            <h2 data-en="About Me" data-es="Sobre Mí">Sobre Mí</h2>
-            <p data-en="Hello, I am Mario, a web developer with a passion for creating exceptional user experiences."
-                data-es="Hola, soy Mario, un desarrollador web con pasión por crear experiencias de usuario excepcionales.">
-            </p>
+        <h2 id="section-title" data-en="About Me" data-es="Sobre Mí"></h2>
+        <div class="about-container">
+            <div class="left-column">
+                <img src="your-image.jpg" alt="Mario" class="profile-image">
+                <p class="description"
+                    data-en="Hi, I'm Mario, a software developer with a deep passion for technology, programming, and video games."
+                    data-es="Hola, soy Mario, un desarrollador de software con una profunda pasión por la tecnología, la programación y los videojuegos.">
+                </p>
+            </div>
+            <div class="center-column">
+                <h3 data-en="Technologies I Use" data-es="Tecnologías que Utilizo"></h3>
+                <ul class="tech-list">
+                    <li><img src="icon-html5.png" alt="HTML5"></li>
+                    <li><img src="icon-css3.png" alt="CSS3"></li>
+                    <li><img src="icon-js.png" alt="JavaScript"></li>
+                    <li><img src="icon-react.png" alt="React"></li>
+                    <!-- Añade más tecnologías según sea necesario -->
+                </ul>
+            </div>
         </div>
     </section>
 

@@ -52,4 +52,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Mostrar el nav cuando se llegue al section "about"
     window.addEventListener('scroll', toggleNavSticky);
+
+    window.addEventListener('scroll', function() {
+        const aboutSection = document.getElementById('about');
+        const sectionTitle = document.getElementById('section-title');
+        const sectionPosition = aboutSection.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.3;
+
+        if (sectionPosition < screenPosition) {
+            aboutSection.classList.add('visible');
+            sectionTitle.classList.add('visible');
+        }
+    });
+
+
 });
