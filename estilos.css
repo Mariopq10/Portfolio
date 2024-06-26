@@ -491,6 +491,35 @@ progress::-webkit-progress-value {
   max-width: 25em;
 }
 
+.modal{
+  display: none; /* Ocultar el modal por defecto */
+  position: fixed; /* Posición fija para cubrir toda la pantalla */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+  z-index: 1000; /* Z-index alto para estar por encima de otros elementos */
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 80%; /* Máximo ancho del contenido del modal */
+  text-align: center;
+}
+
+.modal-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
 /* FIN PROJECTS*/
 
 /* IMAGEN DEL PERFIL*/
@@ -604,7 +633,7 @@ display: flex;
 
 
 /*INICIO INFO BUTTON*/
-.btn {
+.modal-btn {
   line-height: 50px;
   height: 50px;
   text-align: center;

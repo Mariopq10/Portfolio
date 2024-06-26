@@ -108,44 +108,41 @@
                                     data-es="Proyecto de Ionic, gestiona las comunicaciones entre Laboratorio Farmacéutico y Farmacia, los cuales emiten pedidos al Laboratorio.">
                                 </p>
                             </div>
-                            <div class="btn btn-three">
+                            <div class="modal-btn btn-three">
                                 <span>+ info</span>
-                              </div>
-
+                            </div>
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="project">
                             <h3 class="project-title">FilmApp</h3>
                             <div class="project-gallery">
-                                <img src="res/.png" alt="Farmamálaga Image 1">
-                                <img src="res/farma2.png" alt="Farmamálaga Image 2">
-                                <img src="res/farma4.png" alt="Farmamálaga Image 4">
-                                <img src="res/farma5.png" alt="Farmamálaga Image 5">
+                                <img src="res/filmapp.PNG" alt="Farmamálaga Image 1">
+
                             </div>
                             <div id="project-description">
                                 <p class="project-description" data-en="Angular Project based in IMDB"
                                     data-es="Primer proyecto de Angular, se conecta a una Api de TMDB, de la cual sacamos las peliculas. Conecta a una base de datos Mysql a través de php, se genera un token e iniciamos sesión.">
                                 </p>
                             </div>
-                          
+
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="project">
                             <h3 class="project-title">AppTorremolinos</h3>
                             <div class="project-gallery">
-                                <img src="res/.png" alt="Farmamálaga Image 1">
-                                <img src="res/farma2.png" alt="Farmamálaga Image 2">
-                                <img src="res/farma4.png" alt="Farmamálaga Image 4">
-                                <img src="res/farma5.png" alt="Farmamálaga Image 5">
+                                <img src="res/django1.PNG" alt="Farmamálaga Image 1">
+                                <img src="res/django2.PNG" alt="Farmamálaga Image 2">
+                                <img src="res/django3.PNG" alt="Farmamálaga Image 4">
+                                <img src="res/django4.PNG" alt="Farmamálaga Image 5">
                             </div>
                             <div id="project-description">
-                            <p class="description" data-en="
+                                <p class="description" data-en="
                             Django project that manages the data of a sports center"
-                                data-es="Proyecto Django que gestiona los datos de un polideportivo."></p>
+                                    data-es="Proyecto Django que gestiona los datos de un polideportivo."></p>
                             </div>
-                            
+
                         </div>
                     </div>
 
@@ -154,7 +151,18 @@
                 <!-- Controles de navegación -->
                 <div class="swiper-button-next" style="color: #a34caf"><img src="res/arrow.png"> </div>
                 <div class="swiper-button-prev" style="color: #a34caf"> <img src="res/arrow.png"> </div>
-
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                      <span class="close" style="cursor: pointer;">&times;</span>
+                      <h2 data-en="
+                      Information"
+                              data-es="Información"></h2>
+                      <p class="project-description" data-en="This project use Firebase as realtime database to change the state of the pharmacy contract also MySql database to save the users data, like contracts, images, petitions..."
+                              data-es="Este proyecto usa Firebase como realtime database para cambiar el estado del contrato, tambien usa una base de datos Mysql para guardar datos de usuario como los contratos, imagenes, solicitudes..."></p>
+                      <p data-en="Click here to see a short display." data-es="Clica aquí para ver una breve presentación."></p>
+                      <button id="downloadBtn" data-en="See display." data-es="Ir al archivo"></button>
+                    </div>
+                  </div>
             </div>
         </div>
     </section>

@@ -106,4 +106,50 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
-});
+    /*Modal*/
+    var modalBtn = document.querySelector(".modal-btn"); // Selecciona el botón de modal
+    var modal = document.getElementById("myModal"); // Selecciona el modal
+    var closeBtn = modal.querySelector(".close"); // Selecciona el botón de cerrar del modal
+  
+    // Función para abrir el modal
+    modalBtn.addEventListener("click", function() {
+      modal.style.display = "flex"; // Mostrar el modal al hacer clic en el botón
+    });
+  
+    // Función para cerrar el modal
+    closeBtn.addEventListener("click", function() {
+      modal.style.display = "none"; // Ocultar el modal al hacer clic en el botón de cerrar
+    });
+  
+    // Cerrar el modal si se hace clic fuera del contenido del modal
+    window.addEventListener("click", function(event) {
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+
+    /*Descarga presentacion */
+    var downloadBtn = document.getElementById("downloadBtn");
+
+    downloadBtn.addEventListener("click", function() {
+      // Ruta del archivo PDF que se va a descargar
+      var fileUrl = "res/presentacionfarmamalaga.pdf";
+      
+      // Nombre que se le dará al archivo PDF al descargar
+      var fileName = "presentacionfarmamalaga.pdf";
+
+      // Crear un elemento <a> temporal para iniciar la descarga
+      var a = document.createElement("a");
+      a.href = fileUrl;
+      a.download = fileName;
+
+      // Agregar el elemento <a> al DOM y hacer clic en él
+      document.body.appendChild(a);
+      a.click();
+
+      // Eliminar el elemento <a> del DOM después de la descarga
+      document.body.removeChild(a);
+    });
+
+
+  });
