@@ -1,6 +1,10 @@
 /* General Styles */
+:root {
+  --swiper-theme-color: #ca00ff
+}
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Fira Code', monospace;
   margin: 0;
   padding: 0;
   background-color: #f4f4f4;
@@ -10,23 +14,29 @@ body {
 
 /* Header Styles */
 #header {
-    display: none; /* Inicialmente oculto */
+  display: none;
+  /* Inicialmente oculto */
 }
 
 /* Estilo sticky del header */
 #header.sticky {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #000000; /* Fondo blanco */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    z-index: 1000; /* Asegura que esté por encima de otros elementos */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px; /* Espaciado interior */
-    transition: background-color 0.5s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #000000;
+  /* Fondo blanco */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* Sombra suave */
+  z-index: 1000;
+  /* Asegura que esté por encima de otros elementos */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  /* Espaciado interior */
+  transition: background-color 0.5s ease, box-shadow 0.3s ease;
+  /* Transiciones suaves */
 }
 
 .container {
@@ -82,13 +92,17 @@ nav ul li a {
 
 .nav-links a {
   text-decoration: none;
-  color: #ffffff9f; /* Color de texto */
-  transition: color 0.3s ease; /* Transición de color suave */
+  color: #ffffff9f;
+  /* Color de texto */
+  transition: color 0.3s ease;
+  /* Transición de color suave */
 }
 
 .nav-links a:hover {
-  color: #FF44CC; /* Color al pasar el ratón */
+  color: #FF44CC;
+  /* Color al pasar el ratón */
 }
+
 /* Fin sticky navbar */
 
 #language-toggle {
@@ -144,6 +158,18 @@ section:nth-child(odd) {
   background-color: #f4f4f4;
 }
 
+#section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 2rem;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+#section-title.visible {
+  opacity: 1;
+}
+
 /* Footer Styles */
 footer {
   background-color: #333;
@@ -190,7 +216,7 @@ html {
   position: relative;
   background: #44444400;
   color: #ffffff91;
-  text-decoration: none;
+  font-family: 'Fira Code', monospace;
   text-transform: uppercase;
   border: none;
   letter-spacing: 0.1rem;
@@ -219,7 +245,8 @@ html {
 .custom-button span {
   position: relative;
   z-index: 1;
-  margin-right: 20px; /* Space for the arrow */
+  margin-right: 20px;
+  /* Space for the arrow */
 }
 
 .custom-button i {
@@ -270,7 +297,8 @@ html {
   width: 10px;
   height: 10px;
   position: absolute;
-  right: 30px; /* Position the arrow to the right of the text */
+  right: 30px;
+  /* Position the arrow to the right of the text */
   top: 18px;
   border-left: 2px solid #FF44CC;
   border-bottom: 2px solid #FF44CC;
@@ -288,9 +316,11 @@ html {
   0% {
     transform: translateX(0);
   }
+
   50% {
     transform: translateX(5px);
   }
+
   100% {
     transform: translateX(0);
   }
@@ -300,25 +330,14 @@ html {
   0% {
     box-shadow: #27272c;
   }
+
   50% {
     box-shadow: 0 0 25px var(--clr);
   }
+
   100% {
     box-shadow: #27272c;
   }
-}
-
-
-h2 {
-  text-align: center;
-  font-size: 2rem;
-  margin-top: 2rem;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-
-h2.visible {
-  opacity: 1;
 }
 
 #about {
@@ -334,6 +353,7 @@ h2.visible {
   opacity: 1;
   transform: translateY(0);
 }
+
 .about-container {
   width: 80%;
   display: flex;
@@ -347,13 +367,34 @@ h2.visible {
   flex: 1;
   text-align: center;
 }
-
+/* IMAGEN DEL PERFIL*/
 .profile-image {
   width: 100%;
   max-width: 200px;
   border-radius: 50%;
   margin-bottom: 1rem;
 }
+
+.profile-image-carousel {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente las imágenes */
+    align-items: center; /* Centra verticalmente las imágenes */
+    max-width: 100%; /* Ajusta el tamaño máximo del carrusel */
+    overflow: hidden; /* Oculta el desbordamiento de las imágenes */
+}
+
+.profile-image-carousel img {
+    width:14em; /* Las imágenes ocupan el 100% del ancho del contenedor */
+    height:14em; /* La altura se ajusta automáticamente según el ancho */
+    object-fit: cover; /* Ajusta el tamaño de la imagen manteniendo la proporción y recortando si es necesario */
+    display: none; /* Oculta todas las imágenes por defecto */
+}
+
+.profile-image-carousel img:first-child {
+    display: block; /* Muestra la primera imagen inicialmente */
+}
+
+/*FIN IMAGEN PERFIL*/
 
 .description {
   font-size: 1rem;
@@ -383,6 +424,12 @@ h2.visible {
 .tech-list img {
   max-width: max-content;
   height: 50px;
+  transition: height 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.tech-list img:hover {
+  transform: scale(1.15);
+  transition: 0.5s ease-in-out;
 }
 
 progress {
@@ -405,42 +452,102 @@ progress::-webkit-progress-value {
   border-radius: 10px;
 }
 
+/* Swiper js*/
+:root {
+  --swiper-theme-color: #ca00ff
+}
 
+
+.swiper-container {
+  position: relative;
+}
+
+.swiper-button-next, .swiper-button-prev {
+  position: absolute;
+ 
+  cursor: pointer; /* Cambia el cursor a mano cuando se pasa sobre los botones */
+  transition: 0.5s ease-in-out;
+
+}
+.swiper-button-next:hover, .swiper-button-prev:hover {
+  transition: 0.5s ease-in-out;
+  transform:scale(1.3);
+}
+.swiper-button-next img, .swiper-button-prev img {
+  height: 50px;
+}
+.swiper-button-prev img {
+  transform: rotateY(180deg);
+}
+
+.swiper-pagination {
+  bottom: 10px;
+  text-align: center;
+}
+
+#projects .swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  content: "";
+  display: none;
+  
+}
+
+/* Fin SWIPER JS*/
 
 
 /* Responsive Design */
 @media (max-width: 768px) {
 
-header{
-  height: 2.5em
-}
-
+  header {
+    height: 2.5em
+  }
+  .description {
+    font-size: 0.75rem;
+    color: #666;
+  }
+ 
   #language-toggle {
-      left: 2em;
-      bottom: 0.3em;
-      background-color: #ddd;
-      border-radius: 30px;
-      position: relative;
-      cursor: pointer;
-      transition: background-color 0.3s;
-      margin-left: auto;
-
+    left: 2em;
+    bottom: 0.3em;
+    background-color: #ddd;
+    border-radius: 30px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: auto;
   }
 
   .nav-links {
-    flex-direction: row; /* Distribución vertical de los enlaces */
-    text-align: center; /* Centrar texto */
+    flex-direction: row;
+    /* Distribución vertical de los enlaces */
+    text-align: center;
+    /* Centrar texto */
   }
 
   .nav-links li {
-    margin: 10px 5px; /* Espaciado entre los elementos de la lista */
+    margin: 10px 5px;
+    /* Espaciado entre los elementos de la lista */
   }
+
   .nav-links li a {
     font-size: 0.9em;
   }
 
   .toggle {
-    margin-top: 10px; /* Espaciado superior del toggle */
+    margin-top: 10px;
+    /* Espaciado superior del toggle */
   }
 
   .tech-list img {
@@ -453,6 +560,11 @@ header{
     display: flex;
     justify-content: end;
   }
+  .profile-image-carousel img {
+    width:7em; /* Las imágenes ocupan el 100% del ancho del contenedor */
+    height:7em; /* La altura se ajusta automáticamente según el ancho */
+}
+
   progress {
     -webkit-appearance: none;
     appearance: none;
@@ -464,4 +576,22 @@ header{
     margin-left: 1em;
   }
 
+  .custom-button {
+    position: relative;
+    font-family: 'Fira Code', monospace;
+    background: #44444400;
+    color: #ffffff91;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: none;
+    letter-spacing: 0.1rem;
+    font-size: 0.75rem;
+    padding: 1rem 3rem;
+    transition: 0.7s;
+    cursor: pointer;
+  }
+
+  footer {
+    font-size: 0.7em;
+  }
 }

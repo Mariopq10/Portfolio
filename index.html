@@ -4,8 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Portafolio</title>
+    <title>Mario</title>
     <link rel="stylesheet" href="estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+
 </head>
 
 <body>
@@ -31,8 +35,8 @@
     <section id="home">
         <div class="background"></div>
         <div class="content container">
-            <h1 data-en="Hello, I'm Mario Pérez Quintero" data-es="Hola, soy Mario Pérez Quintero"
-                style="color: rgba(255, 255, 255, 0.695);">Bienvenido a Mi
+            <h1 data-en="Hi, I'm Mario" data-es="Hola, soy Mario" style="color: rgba(255, 255, 255, 0.695);">Bienvenido
+                a Mi
                 Portafolio</h1>
             <h3 data-en="Junior Software developer" data-es="Junior Software Developer"
                 style="color: rgba(255, 255, 255, 0.695);">
@@ -48,23 +52,36 @@
         <h2 id="section-title" data-en="About Me" data-es="Sobre Mí"></h2>
         <div class="about-container">
             <div class="left-column">
-                <img src="res/mario2.jpg" alt="Mario" class="profile-image">
+                <div class="profile-image-carousel">
+                    <img src="res/mario1.jpg" alt="Mario" class="profile-image">
+                    <img src="res/mario2.jpg" alt="Mario" class="profile-image">
+                    <img src="res/mario3.jpg" alt="Mario" class="profile-image">
+                    <!-- Agrega más imágenes según sea necesario -->
+                </div>
                 <p class="description"
-                    data-en="Hi, I'm Mario, a software developer with a deep passion for technology, programming, and video games."
-                    data-es="Hola, soy Mario, un desarrollador de software con una profunda pasión por la tecnología, la programación y los videojuegos.">
+                    data-en="I'm a Junior Software Developer with a deep passion for technology, programming, and video games."
+                    data-es="Soy Desarrollador de Software Junior con una profunda pasión por la tecnología, la programación y los videojuegos.">
                 </p>
             </div>
             <div class="center-column">
                 <h3 data-en="Technologies I Use" data-es="Tecnologías que uso"></h3>
                 <ul class="tech-list">
-                    <li><img src="res/html.png" alt="HTML5"><progress id='p1' value='0' max='100' data-target='80'></progress></li>
-                    <li><img src="res/css3.png" alt="CSS3"><progress id='p2' value='0' max='100' data-target='80'></progress></li>
-                    <li><img src="res/angular.png" alt="Angular"><progress id='p3' value='0' max='100' data-target='80'></progress></li>
-                    <li><img src="res/ionic.png" alt="Ionic"><progress id='p4' value='0' max='100' data-target='75'></progress></li>
-                    <li><img src="res/node.png" alt="Node JS"><progress id='p5' value='0' max='100' data-target='70'></progress></li>
-                    <li><img src="res/ts.png" alt="TypeScript"><progress id='p6' value='0' max='100' data-target='70'></progress></li>
-                    <li><img src="res/react.png" alt="React"><progress id='p7' value='0' max='100' data-target='60'></progress></li>
-                    <li><img src="res/java.png" alt="Java"><progress id='p8' value='0' max='100' data-target='60'></progress></li>
+                    <li><img src="res/html.png" alt="HTML5"><progress id='p1' value='0' max='100'
+                            data-target='80'></progress></li>
+                    <li><img src="res/css3.png" alt="CSS3"><progress id='p2' value='0' max='100'
+                            data-target='80'></progress></li>
+                    <li><img src="res/angular.png" alt="Angular"><progress id='p3' value='0' max='100'
+                            data-target='80'></progress></li>
+                    <li><img src="res/ionic.png" alt="Ionic"><progress id='p4' value='0' max='100'
+                            data-target='75'></progress></li>
+                    <li><img src="res/node.png" alt="Node JS"><progress id='p5' value='0' max='100'
+                            data-target='70'></progress></li>
+                    <li><img src="res/ts.png" alt="TypeScript"><progress id='p6' value='0' max='100'
+                            data-target='70'></progress></li>
+                    <li><img src="res/react.png" alt="React"><progress id='p7' value='0' max='100'
+                            data-target='60'></progress></li>
+                    <li><img src="res/java.png" alt="Java"><progress id='p8' value='0' max='100'
+                            data-target='60'></progress></li>
                 </ul>
             </div>
         </div>
@@ -72,17 +89,40 @@
 
     <section id="projects">
         <div class="container">
-            <h2 data-en="Projects" data-es="Proyectos">Proyectos</h2>
-            <div class="project">
-                <h3>Farmamálaga</h3>
-                <p data-en="Ionic Project" data-es="Proyecto de Ionic"></p>
+            <h2 id="section-title" data-en="Projects" data-es="Proyectos" style="color: rgba(0, 0, 0, 0.695);">Proyectos
+            </h2>
+            <!-- Swiper -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="project">
+                            <h3>Farmamálaga</h3>
+                            <p class="description" data-en="Ionic Project" data-es="Proyecto de Ionic"></p>
+
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="project">
+                            <h3 data-en="FilmApp" data-es="FilmApp"></h3>
+                            <p class="description" data-en="Angular Project based in IMDB" data-es="Proyecto Angular basado en IMDB"></p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="project">
+                            <h3 data-en="AppTorremolinos" data-es="AppTorremolinos"></h3>
+                            <p class="description" data-en="
+                            Django project that manages the data of a sports center"
+                                data-es="Proyecto Django que gestiona los datos de un polideportivo."></p>
+                        </div>
+                    </div>
+
+                    <!-- Añade más proyectos como swiper-slide según sea necesario -->
+                </div>
+                <!-- Controles de navegación -->
+                <div class="swiper-button-next" style="color: #a34caf"><img src="res/arrow.png"> </div>
+                <div class="swiper-button-prev" style="color: #a34caf"> <img src="res/arrow.png"> </div>
+
             </div>
-            <div class="project">
-                <h3 data-en="FilmApp" data-es="FilmApp"></h3>
-                <p data-en="Angular Project based in IMDB" data-es="Proyecto Angular basado en IMDB">Descripción
-                    breve del proyecto 2.</p>
-            </div>
-            <!-- Añade más proyectos según sea necesario -->
         </div>
     </section>
 
@@ -103,6 +143,18 @@
     </footer>
 
     <script src="file.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var swiper = new Swiper('.swiper-container', {
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                loop: true, // Opcional: Hace que el slider sea infinito
+            });
+        });
+    </script>
 </body>
 
 </html>
