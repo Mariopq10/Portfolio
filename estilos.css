@@ -42,6 +42,7 @@ body {
 .container {
   justify-content: space-between;
   align-items: center;
+  bottom: 15%;
 }
 
 .containerH {
@@ -199,7 +200,7 @@ html {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: url('res/smoke2.jpeg') center center / cover no-repeat;
+  background: url('res/design.png') center center / cover no-repeat;
   animation: moveBackground 20s linear infinite;
 }
 
@@ -525,10 +526,15 @@ progress::-webkit-progress-value {
 /* IMAGEN DEL PERFIL*/
 .profile-image {
   width: 100%;
-  max-width: 200px;
+  max-width: 20em;
   border-radius: 50%;
   margin-bottom: 1rem;
+  border: 5px solid #a34caf;
+  box-shadow: 0 4px 8px rgba(151, 132, 132, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
+
+
 
 .profile-image-carousel {
   display: flex;
@@ -687,6 +693,31 @@ display: flex;
 
 
 /* Responsive Design */
+@media (max-width: 1350px) {
+  .project-gallery img {
+    width: 15em;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: 0.3s ease-in-out;
+  }
+
+}
+
+@media (max-width: 1020px) {
+  .project-gallery img {
+    width: 10em;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: 0.3s ease-in-out;
+  }
+
+}
+
+
+
+
 @media (max-width: 768px) {
 
   header {
