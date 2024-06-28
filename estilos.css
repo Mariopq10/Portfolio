@@ -444,12 +444,18 @@ progress::-webkit-progress-value {
 
 /* INICIO PROJECTS*/
 #projects {
+  opacity: 0;
   transform: translateY(20px);
   transition: opacity 1s ease-in-out, transform 1s ease-in-out;
   align-items: center;
   padding: 2em;
   box-sizing: border-box;
   justify-content: center;
+}
+
+#projects.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 .project{
   display: flex;

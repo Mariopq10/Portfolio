@@ -84,26 +84,39 @@ document.addEventListener('DOMContentLoaded', function () {
 
     setInterval(showNextImage, 5000);
 
-    window.addEventListener('scroll', function() {
-        const aboutSection = document.getElementById('about');
-        const projectsSection = document.getElementById('projects');
-        const sectionTitleAbout = aboutSection.querySelector('#section-title');
-        const sectionTitleProjects = projectsSection.querySelector('#section-title');
-        const aboutPosition = aboutSection.getBoundingClientRect().top;
-        const projectsPosition = projectsSection.getBoundingClientRect().top;
-        const screenPosition = window.innerHeight / 1.3;
-    
-        if (aboutPosition < screenPosition && !aboutSection.classList.contains('visible')) {
-            aboutSection.classList.add('visible');
-            sectionTitleAbout.classList.add('visible');
-            animateProgressBars(); 
-        }
-    
-        if (projectsPosition < screenPosition && !projectsSection.classList.contains('visible')) {
-            projectsSection.classList.add('visible');
-            sectionTitleProjects.classList.add('visible');
-        }
-    });
+    function isMobileDevice() {
+        return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+    const projectsSection = document.getElementById('projects');
+    const sectionTitleAbout = aboutSection.querySelector('#section-title');
+    const sectionTitleProjects = projectsSection.querySelector('#section-title');
+    if (!isMobileDevice()) {
+        // Solo agregar el event listener para ordenadores
+        window.addEventListener('scroll', function() {
+            
+            const aboutPosition = aboutSection.getBoundingClientRect().top;
+            const projectsPosition = projectsSection.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.3;
+        
+            if (aboutPosition < screenPosition && !aboutSection.classList.contains('visible')) {
+                aboutSection.classList.add('visible');
+                sectionTitleAbout.classList.add('visible');
+                animateProgressBars(); 
+            }
+        
+            if (projectsPosition < screenPosition && !projectsSection.classList.contains('visible')) {
+                projectsSection.classList.add('visible');
+                sectionTitleProjects.classList.add('visible');
+            }
+        });
+    }else{
+        animateProgressBars(); 
+        aboutSection.classList.add('visible');
+        sectionTitleAbout.classList.add('visible');
+        projectsSection.classList.add('visible');
+        sectionTitleProjects.classList.add('visible');
+        
+    }
 
 
     /*Modal*/
@@ -134,19 +147,15 @@ document.addEventListener('DOMContentLoaded', function () {
     downloadBtn.addEventListener("click", function() {
       // Ruta del archivo PDF que se va a descargar
       var fileUrl = "res/presentacionfarmamalaga.pdf";
-      
       // Nombre que se le dará al archivo PDF al descargar
       var fileName = "presentacionfarmamalaga.pdf";
-
       // Crear un elemento <a> temporal para iniciar la descarga
       var a = document.createElement("a");
       a.href = fileUrl;
       a.download = fileName;
-
       // Agregar el elemento <a> al DOM y hacer clic en él
       document.body.appendChild(a);
       a.click();
-
       // Eliminar el elemento <a> del DOM después de la descarga
       document.body.removeChild(a);
     });
