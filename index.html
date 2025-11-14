@@ -1,215 +1,594 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R037C4QRF4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-R037C4QRF4');
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mario</title>
+    <title>Mario Pérez Quintero - Software Developer</title>
     <link rel="stylesheet" href="estilos.css">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <link rel="icon" href="res/favicon.png" type="image/x-icon">
 </head>
+
 <body>
-    <header id="header" style="display: none;">
-        <div class="containerH">
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#home" data-en="Home" data-es="Inicio"></a></li>
-                    <li><a href="#about" data-en="About Me" data-es="Sobre Mí"></a></li>
-                    <li><a href="#projects" data-en="Projects" data-es="Proyectos"></a></li>
-                    <li><a href="#contact" data-en="Contact" data-es="Contacto"></a></li>
-                </ul>
-            </nav>
-            <div id="language-toggle" class="toggle">
-                <div class="toggle-circle"></div>
-            </div>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="logo">MP</div>
+        <ul class="nav-links">
+            <li><a href="#home" class="nav-link" data-es="Inicio" data-en="Home">Inicio</a></li>
+            <li><a href="#experience" class="nav-link" data-es="Experiencia" data-en="Experience">Experiencia</a></li>
+            <li><a href="#skills" class="nav-link" data-es="Habilidades" data-en="Skills">Habilidades</a></li>
+            <li><a href="#projects" class="nav-link" data-es="Proyectos" data-en="Projects">Proyectos</a></li>
+            <li><a href="#contact" class="nav-link" data-es="Contacto" data-en="Contact">Contacto</a></li>
+        </ul>
+        <div class="lang-toggle" id="langToggle">
+            <span>ES</span>
+            <span>EN</span>
+            <div class="lang-slider"></div>
         </div>
-    </header>
+    </nav>
 
-    <section id="home">
-        <div class="background"></div>
-        <div class="content container">
-            <h1 data-en="Hi, I'm Mario" data-es="Hola, soy Mario" style="color: rgba(255, 255, 255, 0.907);"></h1>
-            <h3 data-en="Junior Software developer" data-es="Junior Software Developer"
-                style="color: rgba(255, 255, 255, 0.9);">
-                </h2>
-                <a href="#about">
-                    <button class="custom-button" style="--clr:#FF44CC"><span data-en="View my work"
-                            data-es="Mira mi trabajo"></span><i></i></button>
-                </a>
-        </div>
-    </section>
-
-    <section id="about">
-        <h2 id="section-title" data-en="About Me" data-es="Sobre Mí"></h2>
-        <div class="about-container">
-            <div class="left-column">
-                <div class="profile-image-carousel">
-                    <!-- <img src="res/mario1.jpg" alt="Mario" class="profile-image"> -->
-                    <img src="res/mario5.jpeg" alt="Mario" class="profile-image">
-                    <img src="res/mario6.jpeg" alt="Mario" class="profile-image">
-                    <img src="res/mario2.jpg" alt="Mario" class="profile-image">
-                    <img src="res/mario3.jpg" alt="Mario" class="profile-image">
-                    <img src="res/mario4.jpeg" alt="Mario" class="profile-image">
-                    <!-- Agrega más imágenes según sea necesario -->
-                </div>
-                <p class="description"
-                    data-en="I'm a Junior Software Developer with a deep passion for technology, programming, and video games."
-                    data-es="Soy Desarrollador de Software Junior con una profunda pasión por la tecnología, la programación y los videojuegos.">
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="particles" id="particles"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 data-es="Hola, soy Mario" data-en="Hi, I'm Mario">Hola, soy Mario</h1>
+                <h2 data-es="Desarrollador de Software Junior" data-en="Junior Software Developer">Desarrollador de
+                    Software Junior</h2>
+                <p data-es="Apasionado por la tecnología, la programación y los videojuegos. Especializado en desarrollo web y aplicaciones móviles con Angular, Ionic y React."
+                    data-en="Passionate about technology, programming and video games. Specialized in web development and mobile applications with Angular, Ionic and React.">
+                    Apasionado por la tecnología, la programación y los videojuegos. Especializado en desarrollo web y
+                    aplicaciones móviles con Angular, Ionic y React.
                 </p>
+                <div class="cta-buttons">
+                    <a href="#projects" class="btn btn-primary" data-es="Ver Proyectos" data-en="View Projects">Ver
+                        Proyectos</a>
+                    <a href="#contact" class="btn btn-secondary" data-es="Contactar" data-en="Contact Me">Contactar</a>
+                </div>
             </div>
-            <div class="center-column">
-                <h3 data-en="Technologies I Use" data-es="Tecnologías que uso"></h3>
-                <ul class="tech-list">
-                    <li><img src="res/html.png" alt="HTML5"><progress id='p1' value='0' max='100'
-                            data-target='80'></progress></li>
-                    <li><img src="res/css3.png" alt="CSS3"><progress id='p2' value='0' max='100'
-                            data-target='80'></progress></li>
-                    <li><img src="res/angular.png" alt="Angular"><progress id='p3' value='0' max='100'
-                            data-target='80'></progress></li>
-                    <li><img src="res/ionic.png" alt="Ionic"><progress id='p4' value='0' max='100'
-                            data-target='75'></progress></li>
-                    <li><img src="res/node.png" alt="Node JS"><progress id='p5' value='0' max='100'
-                            data-target='70'></progress></li>
-                    <li><img src="res/ts.png" alt="TypeScript"><progress id='p6' value='0' max='100'
-                            data-target='70'></progress></li>
-                    <li><img src="res/react.png" alt="React"><progress id='p7' value='0' max='100'
-                            data-target='60'></progress></li>
-                    <li><img src="res/java.png" alt="Java"><progress id='p8' value='0' max='100'
-                            data-target='60'></progress></li>
-                </ul>
+            <div class="hero-image">
+                <div class="profile-card">
+                    <img src="res/mario6.jpeg" alt="Mario Pérez" class="profile-img">
+
+                    <div class="social-links">
+
+                        <!-- GitHub -->
+                        <a href="https://github.com/Mariopq10" target="_blank" aria-label="GitHub" title="GitHub">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.58.1.79-.25.79-.56 
+                    0-.27-.01-1.17-.02-2.13-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.3-1.7-1.3-1.7-1.06-.72.08-.71.08-.71 
+                    1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.73 1.26 3.4.96.1-.76.41-1.26.75-1.55-2.55-.29-5.23-1.28-5.23-5.7 
+                    0-1.26.45-2.29 1.2-3.1-.12-.3-.52-1.52.11-3.17 0 0 .97-.31 3.18 1.18A11 11 0 0 1 12 6.8c.98.004 1.97.13 
+                    2.9.38 2.2-1.49 3.17-1.18 3.17-1.18.64 1.65.24 2.87.12 3.17.75.81 1.19 1.84 1.19 3.1 
+                    0 4.43-2.69 5.41-5.26 5.69.42.36.8 1.09.8 2.21 0 1.6-.02 2.88-.02 3.27 
+                    0 .31.21.67.8.56A10.52 10.52 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z" />
+                            </svg>
+                        </a>
+
+                        <!-- LinkedIn -->
+                        <a href="https://www.linkedin.com/in/mario-pérez-quintero-986405238" target="_blank"
+                            aria-label="LinkedIn" title="LinkedIn">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.45 20.45h-3.55v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.07 1.4-2.07 2.85v5.5H9.48V9h3.41v1.56h.05c.47-.9 
+                    1.61-1.85 3.31-1.85 3.54 0 4.19 2.33 4.19 5.36v6.38zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.23 
+                    0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.78 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 
+                    .77 23.22 0 22.23 0z" />
+                            </svg>
+                        </a>
+
+                        <!-- Gmail -->
+                        <a href="mailto:mario.pq10@gmail.com" aria-label="Email" title="Enviar correo">
+                            <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 
+                    0 2-.9 2-2V6c0-1.1-.9-2-2-2Zm0 4-8 5-8-5V6l8 
+                    5 8-5v2Z" />
+                            </svg>
+                        </a>
+
+                    </div>
+                </div>
             </div>
+
+        </div>
         </div>
     </section>
 
+    <!-- Experience Section -->
+    <section id="experience">
+        <h2 class="section-title" data-es="Experiencia Laboral" data-en="Work Experience">Experiencia Laboral</h2>
+        <div class="timeline">
+
+            <!-- OPPLUS (BBVA) -->
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-date">2024 - 2025</div>
+                    <h3 data-es="Software Developer" data-en="Software Developer">Software Developer</h3>
+                    <h4>Opplus (BBVA)</h4>
+                    <p data-es="Diseño y desarrollo de una aplicación web para la gestión de solicitudes entre el banco y el BPO. Automatización de procesos con JavaScript y Python, optimización de tiempos de respuesta y eliminación de tareas manuales. Manejo de datos mediante SQL y Python. Trabajo en entornos Cloud AWS."
+                        data-en="Designed and developed a web application to manage service requests between the bank and the BPO. Automated processes using JavaScript and Python, improving response times and removing manual tasks. Data handling with SQL and Python. Worked with AWS Cloud environments.">
+                        Diseño y desarrollo de una aplicación web para la gestión de solicitudes entre el banco y el
+                        BPO. Automatización de procesos con JavaScript y Python, optimización de tiempos de respuesta y
+                        eliminación de tareas manuales. Manejo de datos mediante SQL y Python. Trabajo en entornos Cloud
+                        AWS.
+                    </p>
+                </div>
+            </div>
+
+            <!-- GLOBANT -->
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-date">Abr 2024 - Jun 2024</div>
+                    <h3 data-es="Junior Software Developer" data-en="Junior Software Developer">Junior Software
+                        Developer</h3>
+                    <h4>Globant</h4>
+                    <p data-es="Periodo de prácticas enfocado en desarrollo frontend. Creación de interfaces, componentes y optimización de código con React. Resolución de errores, depuración y propuestas de mejora."
+                        data-en="Internship focused on frontend development. Built interfaces and components, optimized code, solved errors and improved application performance using React.">
+                        Periodo de prácticas enfocado en desarrollo frontend. Creación de interfaces, componentes y
+                        optimización de código con React. Resolución de errores, depuración y propuestas de mejora.
+                    </p>
+                </div>
+            </div>
+
+            <!-- FARMAMÁLAGA (PROYECTO) -->
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-date">2023 - 2024</div>
+                    <h3 data-es="Proyecto de Desarrollo" data-en="Development Project">Proyecto de Desarrollo</h3>
+                    <h4 data-es="Farmamálaga App" data-en="Farmamálaga App">Farmamálaga App</h4>
+                    <p data-es="Aplicación de gestión de pedidos desarrollada con Ionic, Firebase Realtime Database y MySQL. App nativa para Android e iOS, permitiendo tramitación de contratos y validaciones en tiempo real."
+                        data-en="Order management application developed using Ionic, Firebase Realtime Database and MySQL. Native Android and iOS application supporting contract processing and real-time validations.">
+                        Aplicación de gestión de pedidos desarrollada con Ionic, Firebase Realtime Database y MySQL. App
+                        nativa para Android e iOS, permitiendo tramitación de contratos y validaciones en tiempo real.
+                    </p>
+                </div>
+            </div>
+
+            <!-- EDUCACIÓN -->
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-date">2022 - 2024</div>
+                    <h3 data-es="Formación Académica" data-en="Academic Training">Formación Académica</h3>
+                    <h4 data-es="Grado Superior en Desarrollo de Aplicaciones Multiplataforma"
+                        data-en="Higher Degree in Multiplatform Application Development">
+                        Grado Superior en Desarrollo de Aplicaciones Multiplataforma
+                    </h4>
+                    <p data-es="Estudios en desarrollo web y móvil. Proyectos con Angular, React, Ionic, Django y TypeScript. Nota final: 9.38. Candidato Premio Extraordinario."
+                        data-en="Studies in web and mobile development. Projects with Angular, React, Ionic, Django and TypeScript. Final grade: 9.38. Candidate for the Extraordinary Award.">
+                        Estudios en desarrollo web y móvil. Proyectos con Angular, React, Ionic, Django y TypeScript.
+                        Nota final: 9.38. Candidato Premio Extraordinario.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-date">2017 - 2019</div>
+                    <h3 data-es="Formación Académica" data-en="Academic Training">Formación Académica</h3>
+                    <h4 data-es="Grado Superior en Laboratorio Clínico y Biomédico"
+                        data-en="Higher Degree in Clinical and Biomedical Laboratory">
+                        Grado Superior en Laboratorio Clínico y Biomédico
+                    </h4>
+                    <p data-es="Formación técnica en análisis clínicos y procesos biomédicos. Nota final: 8.82."
+                        data-en="Technical training in clinical analysis and biomedical processes. Final grade: 8.82.">
+                        Formación técnica en análisis clínicos y procesos biomédicos. Nota final: 8.82.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2 class="section-title" data-es="Habilidades Técnicas" data-en="Technical Skills">Habilidades Técnicas</h2>
+        <div class="skills-grid">
+
+            <!-- JavaScript & TypeScript -->
+            <div class="skill-card">
+                <div class="skill-header">
+                    <div class="skill-icon" style="background: linear-gradient(135deg, #F7DF1E, #E4C700);">🟨</div>
+                    <div>
+                        <h3>JavaScript & TypeScript</h3>
+                        <p style="color: var(--gray); font-size: 0.9rem;">Lenguajes principales</p>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-width="85"></div>
+                </div>
+            </div>
+
+            <!-- Angular & Ionic -->
+            <div class="skill-card">
+                <div class="skill-header">
+                    <div class="skill-icon" style="background: linear-gradient(135deg, #DD0031, #C3002F);">⚡</div>
+                    <div>
+                        <h3>Angular & Ionic</h3>
+                        <p style="color: var(--gray); font-size: 0.9rem;">Frameworks principales</p>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-width="85"></div>
+                </div>
+            </div>
+
+            <!-- React & Next.js -->
+            <div class="skill-card">
+                <div class="skill-header">
+                    <div class="skill-icon" style="background: linear-gradient(135deg, #61DAFB, #21A1C4);">⚛️</div>
+                    <div>
+                        <h3>React & Next.js</h3>
+                        <p style="color: var(--gray); font-size: 0.9rem;">Framework y librería UI</p>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-width="75"></div>
+                </div>
+            </div>
+
+            <!-- HTML & CSS / Tailwind / Bootstrap -->
+            <div class="skill-card">
+                <div class="skill-header">
+                    <div class="skill-icon" style="background: linear-gradient(135deg, #E34F26, #F16529);">🌐</div>
+                    <div>
+                        <h3>HTML5, CSS3 & Tailwind</h3>
+                        <p style="color: var(--gray); font-size: 0.9rem;">Maquetación moderna</p>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-width="80"></div>
+                </div>
+            </div>
+
+            <!-- Backend: Firebase, MongoDB, MySQL, Node.js -->
+            <div class="skill-card">
+                <div class="skill-header">
+                    <div class="skill-icon" style="background: linear-gradient(135deg, #4285F4, #0F65D9);">🗄️</div>
+                    <div>
+                        <h3>Firebase, MongoDB & SQL</h3>
+                        <p style="color: var(--gray); font-size: 0.9rem;">Bases de datos & backend</p>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-width="75"></div>
+                </div>
+            </div>
+
+            <!-- Node.js -->
+            <div class="skill-card">
+                <div class="skill-header">
+                    <div class="skill-icon" style="background: linear-gradient(135deg, #339933, #2C7A2C);">🟢</div>
+                    <div>
+                        <h3>Node.js</h3>
+                        <p style="color: var(--gray); font-size: 0.9rem;">Desarrollo backend</p>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-width="70"></div>
+                </div>
+            </div>
+
+            <!-- Python -->
+            <div class="skill-card">
+                <div class="skill-header">
+                    <div class="skill-icon" style="background: linear-gradient(135deg, #3776AB, #295784);">🐍</div>
+                    <div>
+                        <h3>Python</h3>
+                        <p style="color: var(--gray); font-size: 0.9rem;">Automatización & datos</p>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-width="65"></div>
+                </div>
+            </div>
+
+            <!-- Cloud: AWS & Google Cloud -->
+            <div class="skill-card">
+                <div class="skill-header">
+                    <div class="skill-icon" style="background: linear-gradient(135deg, #FF9900, #CC7A00);">☁️</div>
+                    <div>
+                        <h3>AWS & Google Cloud</h3>
+                        <p style="color: var(--gray); font-size: 0.9rem;">Cloud & despliegues</p>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-width="65"></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Projects Section -->
     <section id="projects">
-        <div class="container">
-            <h2 id="section-title" data-en="Projects" data-es="Proyectos" style="color: rgba(0, 0, 0, 0.695);">
-            </h2>
-            <!-- Swiper -->
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="project">
-                            <h3 class="project-title">Farmamálaga</h3>
-                            <div class="project-gallery">
-                                <img src="res/farma1.png" alt="Farmamálaga Image 1">
-                                <img src="res/farma2.png" alt="Farmamálaga Image 2">
-                                <img src="res/farma4.png" alt="Farmamálaga Image 4">
-                                <img src="res/farma5.png" alt="Farmamálaga Image 5">
-                            </div>
-                            <div id="project-description">
-                                <p class="project-description" data-en="Ionic Project"
-                                    data-es="Proyecto de Ionic, gestiona las comunicaciones entre Laboratorio Farmacéutico y Farmacia, los cuales emiten pedidos al Laboratorio.">
-                                </p>
-                            </div>
-                            <div class="modal-btn btn-three">
-                                <span>+ info</span>
-                            </div>
-                        </div>
+        <h2 class="section-title" data-es="Proyectos Destacados" data-en="Featured Projects">Proyectos Destacados</h2>
+        <div class="projects-grid">
+
+            <!-- FarmaMálaga -->
+            <div class="project-card">
+                <img src="res/farmamalaga.png" alt="FarmaMálaga" class="project-image">
+                <div class="project-content">
+                    <h3>FarmaMálaga</h3>
+                    <p data-es="Aplicación nativa para Android e iOS para la gestión de pedidos entre farmacias y laboratorio. Sistema en tiempo real con Firebase y tramitación de contratos conectada a MySQL."
+                        data-en="Native Android and iOS app for order management between pharmacies and laboratories. Real-time system with Firebase and contract processing using MySQL.">
+                        Aplicación nativa para Android e iOS para la gestión de pedidos entre farmacias y laboratorio,
+                        con sistema en tiempo real mediante Firebase y tramitación de contratos conectada a MySQL.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Ionic</span>
+                        <span class="tag">Angular</span>
+                        <span class="tag">Firebase</span>
+                        <span class="tag">MySQL</span>
                     </div>
-                    <div class="swiper-slide">
-                        <div class="project">
-                            <h3 class="project-title">FilmApp</h3>
-                            <div class="project-gallery">
-                                <img src="res/filmapp.PNG" alt="Farmamálaga Image 1">
-
-                            </div>
-                            <div id="project-description">
-                                <p class="project-description" data-en="Angular Project based in IMDB"
-                                    data-es="Primer proyecto de Angular, se conecta a una Api de TMDB, de la cual sacamos las peliculas. Conecta a una base de datos Mysql a través de php, se genera un token e iniciamos sesión.">
-                                </p>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="project">
-                            <h3 class="project-title">AppTorremolinos</h3>
-                            <div class="project-gallery">
-                                <img src="res/django1.PNG" alt="Farmamálaga Image 1">
-                                <img src="res/django2.PNG" alt="Farmamálaga Image 2">
-                                <img src="res/django3.PNG" alt="Farmamálaga Image 4">
-                                <img src="res/django4.PNG" alt="Farmamálaga Image 5">
-                            </div>
-                            <div id="project-description">
-                                <p class="description" data-en="
-                            Django project that manages the data of a sports center"
-                                    data-es="Proyecto Django que gestiona los datos de un polideportivo."></p>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <!-- Añade más proyectos como swiper-slide según sea necesario -->
                 </div>
-                <!-- Controles de navegación -->
-                <div class="swiper-button-next" style="color: #a34caf"><img src="res/arrow.png"> </div>
-                <div class="swiper-button-prev" style="color: #a34caf"> <img src="res/arrow.png"> </div>
-                <div id="myModal" class="modal">
-                    <div class="modal-content">
-                      <span class="close" style="cursor: pointer;">&times;</span>
-                      <h2 data-en="
-                      Information"
-                              data-es="Información"></h2>
-                      <p class="project-description" data-en="This project use Firebase as realtime database to change the state of the pharmacy contract also MySql database to save the users data, like contracts, images, petitions..."
-                              data-es="Este proyecto usa Firebase como realtime database para cambiar el estado del contrato, tambien usa una base de datos Mysql para guardar datos de usuario como los contratos, imagenes, solicitudes..."></p>
-                      <p data-en="Click here to see a short display." data-es="Clica aquí para ver una breve presentación."></p>
-                      <button id="downloadBtn" data-en="See display." data-es="Ir al archivo"></button>
+            </div>
+
+            <!-- Redesign · BBVA / Opplus -->
+            <div class="project-card">
+                <img src="res/opplus.png" alt="Redesign BBVA"
+                    class="project-image">
+                <div class="project-content">
+                    <h3>Redesign – Opplus / BBVA</h3>
+                    <p data-es="Proyecto interno para el departamento de Data Governance del BBVA. Rediseño completo de la plataforma de gestión de solicitudes entre BPO y banco. Incluye automatizaciones con JavaScript y Python, mejoras UI/UX y optimización de comunicación."
+                        data-en="Internal project for BBVA's Data Governance department. Complete redesign of the request management platform between BPO and the bank. Includes JavaScript and Python automations, UI/UX improvements and communication optimization.">
+                        Proyecto interno para el departamento de Data Governance del BBVA. Rediseño completo de la
+                        plataforma de gestión de solicitudes con automatizaciones en JavaScript y Python, mejoras UI/UX
+                        y optimización de procesos.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">SQL</span>
+                        <span class="tag">AWS</span>
                     </div>
-                  </div>
+                </div>
+            </div>
+
+            <!-- Beticojaponesa.com -->
+            <div class="project-card">
+                <img src="res/beticojaponesa.png" alt="Beticojaponesa"
+                    class="project-image">
+                <div class="project-content">
+                    <h3>Beticojaponesa.com</h3>
+                    <p data-es="Aplicación web de venta de maquinaria agrícola desarrollada en Next.js. Sistema de gestión de productos, subida de imágenes con Firebase Storage, sincronización con Google Cloud Storage y base de datos en MongoDB."
+                        data-en="Agricultural machinery sales web application built with Next.js. Includes product management, image upload with Firebase Storage, Google Cloud Storage integration and MongoDB database.">
+                        Aplicación web de venta de maquinaria agrícola desarrollada en Next.js con gestión de productos,
+                        subida de imágenes a Firebase Storage, integración con Google Cloud Storage y base de datos en
+                        MongoDB.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Next.js</span>
+                        <span class="tag">Firebase</span>
+                        <span class="tag">MongoDB</span>
+                        <span class="tag">Google Cloud</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title" data-es="Contacto" data-en="Contact">Contacto</h2>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <!-- Email -->
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 data-es="Email" data-en="Email">Email</h4>
+                        <p>
+                            <a href="mailto:mario.pq10@gmail.com" target="_blank">
+                                mario.pq10@gmail.com
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- GitHub -->
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.58.1.79-.25.79-.56 0-.27-.01-1.17-.02-2.13-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.3-1.7-1.3-1.7-1.06-.72.08-.71.08-.71 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.73 1.26 3.4.96.1-.76.41-1.26.75-1.55-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.2-3.1-.12-.3-.52-1.52.11-3.17 0 0 .97-.31 3.18 1.18A11 11 0 0 1 12 6.8c.98.004 1.97.13 2.9.38 2.2-1.49 3.17-1.18 3.17-1.18.64 1.65.24 2.87.12 3.17.75.81 1.19 1.84 1.19 3.1 0 4.43-2.69 5.41-5.26 5.69.42.36.8 1.09.8 2.21 0 1.6-.02 2.88-.02 3.27 0 .31.21.67.8.56A10.52 10.52 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h4>GitHub</h4>
+                        <p>
+                            <a href="https://github.com/Mariopq10" target="_blank">
+                                github.com/Mariopq10
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- LinkedIn -->
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.45 20.45h-3.55v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.07 1.4-2.07 2.85v5.5H9.48V9h3.41v1.56h.05c.47-.9 1.61-1.85 3.31-1.85 3.54 0 4.19 2.33 4.19 5.36v6.38zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.78 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.22 0 22.23 0z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h4>LinkedIn</h4>
+                        <p>
+                            <a href="https://www.linkedin.com/in/mario-pérez-quintero-986405238" target="_blank">
+                                Mario Pérez Quintero
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Ubicación -->
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div>
+                        <h4 data-es="Ubicación" data-en="Location">Ubicación</h4>
+                        <p>Málaga, Andalucía, ES</p>
+                    </div>
+                </div>
+            </div>
+            <div style="background: rgba(255, 255, 255, 0.05); padding: 3rem; border-radius: 15px; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1);">
+                <h3 style="margin-bottom: 1.5rem;" data-es="¿Trabajamos juntos?" data-en="Let's work together?">¿Trabajamos juntos?</h3>
+                <p style="color: var(--gray); margin-bottom: 2rem;" data-es="Estoy disponible para nuevos proyectos y oportunidades. No dudes en contactarme." data-en="I'm available for new projects and opportunities. Feel free to contact me.">
+                    Estoy disponible para nuevos proyectos y oportunidades. No dudes en contactarme.
+                </p>
+                <div style="display: flex; gap: 1rem; justify-content: center;">
+                    <a href="mailto:mario.pq10@gmail.com" class="btn btn-primary" data-es="Enviar Email" data-en="Send Email">Enviar Email</a>
+                    <a href="https://www.linkedin.com/in/mario-pérez-quintero-986405238" target="_blank" class="btn btn-secondary">LinkedIn</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="contact">
-        <div class="contact-container">
-            <h2 id="contact-title" data-en="Contact" data-es="Contacto"></h2>
-            <p data-en="For more information, you can contact me at mario.pq10@gmail.com."
-                data-es="Para más información, puedes contactarme a través de mario.pq10@gmail.com."></p>
-            <p data-en="You can also find me here!"
-                data-es="También puedes encontrarme aquí!"></p>
-                <div class="icon-container">
-                    <a href="https://github.com/Mariopq10" class="icon-link">
-                        <img class="icon" src="res/git.png" alt="GitHub">
-                    </a>
-                    <a href="https://www.linkedin.com/in/mario-pérez-quintero-986405238" class="icon-link">
-                        <img class="icon" src="res/linkedin2.png" alt="LinkedIn">
-                    </a>
-                </div>
 
-                
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p data-en="&copy; 2024 Mario Pérez Quintero. All rights reserved."
-                data-es="&copy; 2024 Mario Pérez Quintero. Todos los derechos reservados."></p>
-        </div>
+    <!-- Footer -->
+    <footer style="background: rgba(0, 0, 0, 0.3); padding: 2rem; text-align: center; margin-top: 4rem;">
+        <p data-es="© 2025 Mario Pérez Quintero. Todos los derechos reservados."
+            data-en="© 2025 Mario Pérez Quintero. All rights reserved.">
+            © 2025 Mario Pérez Quintero. Todos los derechos reservados.
+        </p>
     </footer>
 
-    <script src="file.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var swiper = new Swiper('.swiper-container', {
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-                loop: true, // Opcional: Hace que el slider sea infinito
+        // Language Toggle
+        const langToggle = document.getElementById('langToggle');
+        let currentLang = 'es';
+
+        langToggle.addEventListener('click', () => {
+            currentLang = currentLang === 'es' ? 'en' : 'es';
+            langToggle.classList.toggle('en');
+
+            document.querySelectorAll('[data-es][data-en]').forEach(el => {
+                el.textContent = el.getAttribute(`data-${currentLang}`);
             });
         });
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Particles Animation
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 50; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.width = Math.random() * 5 + 2 + 'px';
+            particle.style.height = particle.style.width;
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 6 + 's';
+            particle.style.opacity = Math.random() * 0.5 + 0.1;
+            particlesContainer.appendChild(particle);
+        }
+
+        // Skills Progress Animation
+        const observerOptions = {
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const progressBars = entry.target.querySelectorAll('.skill-progress');
+                    progressBars.forEach(bar => {
+                        const width = bar.getAttribute('data-width');
+                        bar.style.width = width + '%';
+                    });
+                }
+            });
+        }, observerOptions);
+
+        const skillsSection = document.getElementById('skills');
+        if (skillsSection) {
+            observer.observe(skillsSection);
+        }
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const fadeElements = document.querySelectorAll('.timeline-item, .skill-card, .project-card');
+
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }, index * 100);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        fadeElements.forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            fadeObserver.observe(el);
+        });
+
+        // Add hover effect to project cards
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('mouseenter', function () {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+
+            card.addEventListener('mouseleave', function () {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero-bg');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+
+        // Add typing effect to hero title (optional)
+        const heroTitle = document.querySelector('.hero-text h1');
+        if (heroTitle) {
+            const text = heroTitle.textContent;
+            heroTitle.textContent = '';
+            let i = 0;
+
+            function typeWriter() {
+                if (i < text.length) {
+                    heroTitle.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 100);
+                }
+            }
+
+            setTimeout(typeWriter, 500);
+        }
     </script>
 </body>
 
